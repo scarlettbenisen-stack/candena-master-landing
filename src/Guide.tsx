@@ -172,6 +172,15 @@ export default function Guide() {
             </p>
 
             <div className="mt-8 grid gap-6 leading-relaxed">
+              {/* Key callouts */}
+              <div className={isDark ? 'rounded-xl border border-[#ffb347]/25 bg-white/[0.06] p-5' : 'rounded-xl border border-[#ffb347]/25 bg-black/[0.04] p-5'}>
+                <div className={isDark ? 'text-sm font-medium text-white' : 'text-sm font-medium text-zinc-900'}>À retenir</div>
+                <div className={isDark ? 'mt-2 grid gap-2 text-sm text-white/75' : 'mt-2 grid gap-2 text-sm text-zinc-700'}>
+                  <div>• Le problème n’est pas votre “force mentale”. C’est le moment où la décision est prise.</div>
+                  <div>• Un bon système réduit les négociations, surtout quand vous êtes fatigué.</div>
+                  <div>• L’engagement anticipé transforme une impulsion en décision consciente.</div>
+                </div>
+              </div>
               <section className="grid gap-3">
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
                   Pourquoi trahissez-vous vos meilleures intentions ?
@@ -182,6 +191,12 @@ export default function Guide() {
                 <p>
                   Les travaux universitaires (souvent présentés sous l’angle du <span className="font-medium">biais du présent</span>) montrent que votre cerveau a tendance à surévaluer les bénéfices immédiats et à sous-estimer les bénéfices futurs. Sur le moment, l’envie est simple, concrète, presque physique. Le bénéfice à long terme, lui, est abstrait.
                 </p>
+                <div className={isDark ? 'rounded-xl border border-white/[0.10] bg-white/[0.04] p-5 text-sm text-white/70' : 'rounded-xl border border-black/10 bg-black/[0.03] p-5 text-sm text-zinc-700'}>
+                  <div className={isDark ? 'font-medium text-white' : 'font-medium text-zinc-900'}>Insight clé</div>
+                  <p className="mt-2">
+                    Quand une tentation “gagne”, ce n’est pas parce qu’elle est plus importante. C’est parce qu’elle est plus proche. Un système efficace rapproche vos bonnes décisions.
+                  </p>
+                </div>
                 <p>
                   C’est la raison pour laquelle tant de personnes échouent rapidement lorsqu’elles tentent de changer. Une donnée souvent citée (2023) évoque <span className="font-medium">78%</span> d’échec dans les trois premiers mois. Prenez-la comme un signal, pas comme une fatalité : ce n’est pas une question de valeur personnelle. C’est une question de système.
                 </p>
@@ -303,13 +318,44 @@ export default function Guide() {
 
               <section className="grid gap-3">
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
-                  Sources et repères (à garder en tête)
+                  Sources accessibles (pour aller plus loin)
                 </h3>
+                <p className={isDark ? 'text-sm text-white/70' : 'text-sm text-zinc-600'}>
+                  Ces liens sont des points d’entrée lisibles. Ils expliquent les concepts sans jargon académique.
+                </p>
                 <ul className={isDark ? 'list-disc pl-5 text-white/80' : 'list-disc pl-5 text-zinc-700'}>
-                  <li className="mt-2">Université Harvard, économie comportementale : biais du présent et arbitrage court terme vs long terme (références académiques, 2023).</li>
-                  <li className="mt-2">Baumeister (2022) : fatigue décisionnelle et limites de l’autorégulation au fil de la journée.</li>
-                  <li className="mt-2">Données comportementales agrégées (2024) : rôle de l’environnement et de la friction dans la formation d’habitudes.</li>
+                  <li className="mt-2">
+                    <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://www.behavioraleconomics.com/resources/mini-encyclopedia-of-be/" target="_blank" rel="noreferrer">
+                      BehavioralEconomics.com (mini-encyclopédie)
+                    </a>
+                    <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> : définitions (biais du présent, engagement, friction).</span>
+                  </li>
+                  <li className="mt-2">
+                    <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://en.wikipedia.org/wiki/Present_bias" target="_blank" rel="noreferrer">
+                      Present bias (article de synthèse)
+                    </a>
+                    <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> : pourquoi le court terme prend le dessus.</span>
+                  </li>
+                  <li className="mt-2">
+                    <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://en.wikipedia.org/wiki/Decision_fatigue" target="_blank" rel="noreferrer">
+                      Decision fatigue (synthèse)
+                    </a>
+                    <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> : pourquoi les décisions deviennent plus difficiles au fil de la journée.</span>
+                  </li>
+                  <li className="mt-2">
+                    <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://en.wikipedia.org/wiki/Commitment_device" target="_blank" rel="noreferrer">
+                      Commitment devices (engagement préalable)
+                    </a>
+                    <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> : le principe derrière Candena (externaliser une partie de la discipline).</span>
+                  </li>
                 </ul>
+
+                <div className={isDark ? 'mt-2 rounded-xl border border-white/[0.10] bg-white/[0.04] p-5 text-sm text-white/70' : 'mt-2 rounded-xl border border-black/10 bg-black/[0.03] p-5 text-sm text-zinc-700'}>
+                  <div className={isDark ? 'font-medium text-white' : 'font-medium text-zinc-900'}>Note sur les chiffres</div>
+                  <p className="mt-2">
+                    Certains chiffres cités dans ce guide circulent sous forme de synthèses (2023–2024). L’idée à retenir est robuste : l’environnement et le timing des décisions pèsent souvent plus que la motivation.
+                  </p>
+                </div>
               </section>
             </div>
 

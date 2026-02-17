@@ -127,7 +127,7 @@ export default function Guide() {
                     : 'inline-flex items-center justify-center rounded-full border border-black/15 bg-black/5 px-6 py-3 text-sm font-semibold text-zinc-900 hover:bg-black/10'
                 }
               >
-                Revenir à la landing
+                Revenir à Candena
               </a>
             </div>
           </div>

@@ -2,9 +2,9 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 const links = [
   { href: '#hero', label: 'Accueil' },
-  { href: '#test', label: 'Test de volonté' },
-  { href: '#features', label: 'Fonctionnalités' },
-  { href: '#science', label: 'Pourquoi ça marche' },
+  { href: '#features', label: 'Le produit' },
+  { href: '#test', label: 'Calculateur' },
+  { href: '#science', label: 'La science' },
   { href: '#faq', label: 'FAQ' },
   { href: '#pricing', label: 'Réserver' },
 ]

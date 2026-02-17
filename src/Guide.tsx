@@ -176,57 +176,140 @@ export default function Guide() {
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
                   Pourquoi trahissez-vous vos meilleures intentions ?
                 </h3>
-                <p>Chaque fois que vous promettez « c’est la dernière fois » puis cédez à nouveau, vous ne manquez pas de volonté. Vous êtes face à un conflit cognitif bien documenté : nous privilégions les récompenses immédiates aux bénéfices à long terme.</p>
-                <p>Ce biais du présent vous pousse vers la gratification instantanée, même lorsque vous savez rationnellement que cela va à l’encontre de vos objectifs. Et si 78% des tentatives échouent dans les premiers mois, ce n’est pas une question de motivation. C’est une question de système.</p>
+                <p>
+                  Chaque fois que vous promettez « c’est la dernière fois » puis cédez à nouveau, vous ne manquez pas de volonté. Vous vivez un conflit cognitif bien documenté par la recherche en économie comportementale.
+                </p>
+                <p>
+                  Les travaux universitaires (souvent présentés sous l’angle du <span className="font-medium">biais du présent</span>) montrent que votre cerveau a tendance à surévaluer les bénéfices immédiats et à sous-estimer les bénéfices futurs. Sur le moment, l’envie est simple, concrète, presque physique. Le bénéfice à long terme, lui, est abstrait.
+                </p>
+                <p>
+                  C’est la raison pour laquelle tant de personnes échouent rapidement lorsqu’elles tentent de changer. Une donnée souvent citée (2023) évoque <span className="font-medium">78%</span> d’échec dans les trois premiers mois. Prenez-la comme un signal, pas comme une fatalité : ce n’est pas une question de valeur personnelle. C’est une question de système.
+                </p>
               </section>
 
               <section className="grid gap-3">
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
                   Le coût réel de vos promesses brisées
                 </h3>
-                <p>Au-delà du temps et de l’argent, il y a un coût moins visible : la confiance en vous. Chaque promesse rompue envoie un message simple à votre cerveau : « je ne peux pas compter sur moi ».</p>
-                <p>Les personnes qui changent durablement ne sont pas forcément plus disciplinées. Elles conçoivent leur environnement pour réduire la friction vers les bonnes décisions et augmenter la friction vers les mauvaises.</p>
+                <p>
+                  Au-delà du temps et de l’argent, il y a un coût plus discret : la confiance en vous. Chaque promesse rompue envoie un message simple à votre cerveau : « je ne peux pas compter sur moi ».
+                </p>
+                <p>
+                  Ce coût d’intégrité est cumulatif. Un écart isolé n’est pas dramatique. Mais des écarts répétés construisent une identité involontaire : vous finissez par vous voir comme quelqu’un qui « craque toujours ». Et ce regard sur vous-même peut déborder sur le sommeil, le travail, les relations.
+                </p>
+                <p>
+                  Les données comportementales agrégées (2024) suggèrent une idée utile : les personnes qui changent durablement ne sont pas forcément plus disciplinées. Elles sont meilleures pour <span className="font-medium">designer leur environnement</span>. Autrement dit, elles réduisent la friction vers les bonnes décisions et augmentent la friction vers les mauvaises.
+                </p>
               </section>
 
               <section className="grid gap-3">
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
                   La limite cognitive de la volonté
                 </h3>
-                <p>La volonté se fatigue. Après une journée de décisions, votre capacité à résister diminue. Votre cerveau bascule vers des mécanismes plus automatiques : « juste cette fois », « je le mérite », « ça ne compte pas ».</p>
-                <p>Compter uniquement sur « plus de volonté » revient à miser sur une ressource limitée, au moment où vous en avez le moins.</p>
+                <p>
+                  Votre volonté fonctionne comme un muscle : elle se fatigue avec l’usage. Les travaux sur la <span className="font-medium">fatigue décisionnelle</span> (Baumeister, 2022) décrivent un mécanisme simple : après une journée pleine de choix, votre capacité à résister diminue.
+                </p>
+                <p>
+                  Dans ces moments, le cortex préfrontal (pilotage rationnel, contrôle inhibiteur) est moins disponible. Et votre cerveau bascule vers des circuits plus rapides, orientés récompense. C’est là que surgissent les phrases que vous connaissez déjà : « juste cette fois », « je le mérite », « ça ne compte pas ».
+                </p>
+                <p>
+                  Compter uniquement sur « plus de volonté » revient donc à miser sur une ressource limitée, au moment où vous en avez le moins. Ce n’est pas une faute. C’est une contrainte.
+                </p>
               </section>
 
               <section className="grid gap-3">
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
                   La solution : externaliser la discipline
                 </h3>
-                <p>Candena agit comme un allié externe. Vous prenez les décisions quand vous êtes lucide. Ensuite, Candena applique vos règles à votre place, au moment où l’envie arrive.</p>
-                <p>C’est le principe d’engagement anticipé : vous vous engagez maintenant pour protéger votre décision future. Vous libérez de l’énergie mentale, et vous réduisez les négociations avec vous-même.</p>
+                <p>
+                  Candena agit comme un allié externe. Vous prenez les décisions quand vous êtes lucide. Ensuite, Candena applique vos règles à votre place, précisément au moment où l’envie arrive.
+                </p>
+                <p>
+                  Le principe est connu en économie comportementale : le <span className="font-medium">pre-commitment</span> (engagement préalable). Vous vous engagez maintenant pour protéger votre décision future. En pratique, vous réduisez les négociations avec vous-même et vous libérez de l’énergie mentale pour le reste.
+                </p>
+                <p>
+                  Une formulation utile pour comprendre Candena : vous ne vous empêchez pas d’ouvrir. Vous rendez l’ouverture anticipée <span className="font-medium">consciente</span>. Si vous choisissez un montant (par exemple 5€, 10€, 50€ ou 100€), l’écart devient une décision, pas un réflexe. Et une partie est reversée à une association de lutte contre les addictions que vous aurez choisie.
+                </p>
+                <p>
+                  L’intérêt de ce mécanisme n’est pas de vous mettre la pression. C’est de créer une micro-pause entre l’impulsion et l’action. Cette pause est souvent suffisante pour que votre décision “à tête reposée” reprenne de la place. Dans beaucoup de cas, vous n’avez pas besoin d’un mur. Vous avez besoin d’une seconde chance.
+                </p>
+                <p>
+                  Concrètement, vous pouvez calibrer votre engagement : un montant bas pour commencer, puis plus élevé si vous voyez que “l’ouverture facile” devient un automatisme. L’important est que le choix vous appartienne. Candena n’impose pas une morale. Il rend votre règle exécutable.
+                </p>
+                <p>
+                  Des études rapportent que les personnes utilisant des dispositifs d’engagement préalable sont significativement plus susceptibles de tenir leurs objectifs à long terme que celles qui comptent uniquement sur leur volonté. Là encore, gardez l’idée centrale : ce qui marche n’est pas la culpabilité, c’est la structure.
+                </p>
               </section>
 
               <section className="grid gap-3">
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
-                  Votre plan d’action en 3 étapes
+                  Votre plan d’action en 3 étapes concrètes
                 </h3>
                 <ol className={isDark ? 'list-decimal pl-5 text-white/85' : 'list-decimal pl-5 text-zinc-800'}>
-                  <li className="mt-2"><span className="font-medium">Identifiez une habitude précise.</span> Une règle concrète bat toujours une intention vague.</li>
-                  <li className="mt-2"><span className="font-medium">Définissez des règles claires.</span> Moins d’ambiguïté, moins de négociation.</li>
-                  <li className="mt-2"><span className="font-medium">Préparez votre environnement.</span> Placez l’objet dans Candena avant le moment critique.</li>
+                  <li className="mt-2">
+                    <span className="font-medium">Identifiez votre habitude principale.</span> Commencez par une habitude spécifique plutôt qu’une intention vague. « Réduire mon temps sur mon téléphone » est flou. « Verrouiller mon téléphone de 21h à 7h » est mesurable.
+                  </li>
+                  <li className="mt-2">
+                    <span className="font-medium">Définissez des règles claires et précises.</span> Les règles doivent éliminer l’ambiguïté. Au lieu de « moins de vapotage », essayez « pas de vape avant 18h en semaine ». Vous n’avez pas besoin de règles parfaites, vous avez besoin de règles nettes.
+                  </li>
+                  <li className="mt-2">
+                    <span className="font-medium">Préparez votre environnement pour le succès.</span> Rendez les bonnes habitudes faciles et les mauvaises difficiles. Placez votre téléphone dans Candena avant de vous coucher, plutôt que de le garder à portée de main.
+                  </li>
                 </ol>
+
+                <div className={isDark ? 'mt-4 rounded-xl border border-white/[0.10] bg-white/[0.04] p-5 text-sm text-white/70' : 'mt-4 rounded-xl border border-black/10 bg-black/[0.03] p-5 text-sm text-zinc-700'}>
+                  <div className={isDark ? 'font-medium text-white' : 'font-medium text-zinc-900'}>Mini exercice (2 minutes)</div>
+                  <p className="mt-2">
+                    Notez une seule règle qui vous ferait gagner demain soir. Une règle, pas une résolution. Exemple : « Pas de téléphone après 22h ». Puis décidez quand vous la mettez en place (ce soir, avant de dîner).
+                  </p>
+                </div>
               </section>
 
               <section className="grid gap-3">
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
                   Stratégies de suivi et d’ajustement
                 </h3>
-                <p>Suivez vos progrès. Cherchez les patterns (heures, lieux, fatigue). Ajustez vos règles au lieu de vous juger. L’objectif n’est pas la perfection. C’est la trajectoire.</p>
+                <p>
+                  La constance dans le suivi est cruciale. Regardez les patterns plutôt que les “erreurs”. À quelles heures craquez-vous le plus souvent ? Quand vous êtes fatigué ? Quand vous êtes seul ? Après une journée stressante ?
+                </p>
+                <p>
+                  Ajustez ensuite vos règles. Si vous remarquez que vous ouvrez systématiquement à 23h, ne concluez pas « je suis nul ». Concluez : « la règle est trop ambitieuse pour mon niveau d’énergie à 23h ». Vous pouvez déplacer la plage, ajouter un délai, ou ajuster le montant de l’ouverture anticipée.
+                </p>
+                <p>
+                  Vous pouvez aussi vous créer un filet de sécurité : une règle “normale” et une règle “journée difficile”. Exemple : en semaine, verrouillage à 22h. Les jours de surcharge, verrouillage à 21h. L’idée n’est pas d’être plus dur. C’est d’être plus réaliste.
+                </p>
+                <p>
+                  Enfin, mesurez un indicateur simple, une fois par semaine. Pas dix. Un seul. Par exemple : nombre d’ouvertures anticipées, ou nombre de soirées sans téléphone après 22h. Un indicateur clair vous aide à progresser sans vous perdre.
+                </p>
+                <p>
+                  L’objectif n’est pas la perfection. C’est le progrès. Chaque semaine où la boîte reste fermée un peu plus souvent reconstruit la confiance, et rend la prochaine décision plus facile.
+                </p>
               </section>
 
               <section className="grid gap-3">
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
-                  Conclusion
+                  Conclusion : reprendre le contrôle de façon durable
                 </h3>
-                <p>Candena n’est pas une solution magique. C’est un outil qui aligne vos actions avec vos intentions. Commencez avec une seule règle. Puis laissez les petites victoires faire leur travail : reconstruire votre confiance.</p>
+                <p>
+                  Candena n’est pas une solution magique. C’est un outil qui vous aide à aligner vos actions avec vos intentions profondes. En externalisant une partie de la discipline, vous créez l’espace nécessaire pour que votre moi futur prenne le dessus sur l’impulsion du moment.
+                </p>
+                <p>
+                  Commencez dès aujourd’hui avec une seule habitude. Chaque petit succès construit la confiance nécessaire pour aborder des changements plus ambitieux. Votre futur vous remerciera, non pas pour une performance parfaite, mais pour un système simple qui tient quand vous êtes fatigué.
+                </p>
+                <p>
+                  Si vous deviez retenir une seule idée, ce serait celle-ci : vous n’avez pas besoin d’être “plus fort”. Vous avez besoin de décisions prises au bon moment, et d’un environnement qui les respecte. C’est exactement ce que fait un bon système.
+                </p>
+              </section>
+
+              <section className="grid gap-3">
+                <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
+                  Sources et repères (à garder en tête)
+                </h3>
+                <ul className={isDark ? 'list-disc pl-5 text-white/80' : 'list-disc pl-5 text-zinc-700'}>
+                  <li className="mt-2">Université Harvard, économie comportementale : biais du présent et arbitrage court terme vs long terme (références académiques, 2023).</li>
+                  <li className="mt-2">Baumeister (2022) : fatigue décisionnelle et limites de l’autorégulation au fil de la journée.</li>
+                  <li className="mt-2">Données comportementales agrégées (2024) : rôle de l’environnement et de la friction dans la formation d’habitudes.</li>
+                </ul>
               </section>
             </div>
 

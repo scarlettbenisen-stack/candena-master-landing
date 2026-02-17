@@ -161,8 +161,8 @@ export default function App() {
               Vous fixez le prix. Vous gardez le contrôle.
             </motion.h1>
             <p className={isDark ? 'mt-4 max-w-xl text-lg text-white/70' : 'mt-4 max-w-xl text-lg text-zinc-600'}>
-              Candena verrouille vos tentations selon vos règles. Besoin d’ouvrir avant l’heure ? C’est possible, au prix que vous avez choisi.
-              Une partie est reversée à une association de lutte contre les addictions, que vous aurez choisie.
+              Candena verrouille vos tentations. Chaque écart a un prix que vous avez choisi vous-même, dont la moitié part à une cause qui le mérite.
+              Une façon de vous tenir à vos propres règles, même quand l’envie est là.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">

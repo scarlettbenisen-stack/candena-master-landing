@@ -4,6 +4,21 @@ import './index.css'
 import { applyTheme, getInitialTheme, type Theme } from './theme'
 import { ThemeToggle } from './components/ThemeToggle'
 import { MobileMenu } from './components/MobileMenu'
+import { asset } from './assets'
+import {
+  AlertTriangle,
+  BatteryFull,
+  Box,
+  BrainCircuit,
+  Calculator,
+  CalendarClock,
+  ChevronDown,
+  Gem,
+  Menu,
+  RefreshCcw,
+  Shield,
+  TrendingUp,
+} from 'lucide-react'
 
 type Habit = 'vape' | 'telephone' | 'snacks' | 'weed' | 'autre'
 
@@ -55,14 +70,16 @@ export default function App() {
 
   const isDark = theme === 'dark'
 
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
+
   return (
-    <div className={isDark ? 'min-h-screen bg-bg-950 text-white' : 'min-h-screen bg-white text-zinc-900'}>
-      {/* Top background glow */}
+    <div className={isDark ? 'min-h-screen bg-bg-950 bg-grain text-white' : 'min-h-screen bg-white text-zinc-900'}>
+      {/* Top background glow (asymmetrical, subtle) */}
       <div
         className={
           isDark
-            ? 'pointer-events-none fixed inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(ellipse_at_top,rgba(255,179,71,0.20),rgba(0,0,0,0)_60%)]'
-            : 'pointer-events-none fixed inset-x-0 top-0 -z-10 h-[520px] bg-[radial-gradient(ellipse_at_top,rgba(255,179,71,0.18),rgba(255,255,255,0)_60%)]'
+            ? 'pointer-events-none fixed inset-x-0 top-0 -z-10 h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_70%_-10%,rgba(255,179,71,0.12),transparent_60%)]'
+            : 'pointer-events-none fixed inset-x-0 top-0 -z-10 h-[600px] bg-[radial-gradient(ellipse_80%_50%_at_70%_-10%,rgba(255,179,71,0.08),transparent_60%)]'
         }
       />
 
@@ -105,7 +122,7 @@ export default function App() {
               aria-expanded={menuOpen}
             >
               <motion.div animate={menuOpen ? { rotate: 90 } : { rotate: 0 }} transition={{ duration: 0.18 }} className="text-lg">
-                ☰
+                <Menu size={18} strokeWidth={1.5} />
               </motion.div>
             </button>
 
@@ -127,7 +144,7 @@ export default function App() {
 
       {/* Hero */}
       <section id="hero" className="relative">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-20 md:grid-cols-2 md:py-28">
           <div>
             <motion.h1
               initial={{ opacity: 0, y: 10 }}
@@ -178,9 +195,9 @@ export default function App() {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.05 }}
-              className={isDark ? 'relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl' : 'relative overflow-hidden rounded-3xl border border-black/10 bg-white p-4 shadow-2xl'}
+              className={isDark ? 'relative overflow-hidden rounded-2xl border border-white/[0.10] bg-white/[0.06] p-4 shadow-2xl' : 'relative overflow-hidden rounded-2xl border border-black/10 bg-white p-4 shadow-2xl'}
             >
-              <img src="/assets/hero_packshot_closed.jpg" alt="Boîtier Candena" className="h-[360px] w-full rounded-2xl object-cover md:h-[460px]" />
+              <img src={asset('assets/hero_packshot_closed.jpg')} alt="Boîtier Candena" className="h-[360px] w-full rounded-xl object-cover md:h-[460px]" />
               <div className={isDark ? 'mt-4 text-sm text-white/70' : 'mt-4 text-sm text-zinc-600'}>
                 Candena — Acier renforcé, finition premium, format 15×10 cm.
               </div>
@@ -191,7 +208,7 @@ export default function App() {
 
       {/* Test / Lead magnet */}
       <section id="test" className={isDark ? 'border-t border-white/10' : 'border-t border-black/10'}>
-        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-16 md:grid-cols-2">
+        <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2 md:py-20">
           <div>
             <h2 className={isDark ? 'text-3xl font-semibold text-white' : 'text-3xl font-semibold text-zinc-900'}>Combien vous coûtent vos habitudes ?</h2>
             <p className={isDark ? 'mt-3 text-white/70' : 'mt-3 text-zinc-600'}>
@@ -227,13 +244,15 @@ export default function App() {
           </div>
 
           {/* Calculator */}
-          <div className={isDark ? 'rounded-3xl border border-white/10 bg-white/5 p-6' : 'rounded-3xl border border-black/10 bg-black/5 p-6'}>
+          <div className={isDark ? 'rounded-xl border border-white/[0.10] bg-white/[0.06] p-6' : 'rounded-xl border border-black/10 bg-black/[0.04] p-6'}>
             <div className="flex items-start justify-between gap-4">
               <div>
                 <div className={isDark ? 'text-sm text-white/60' : 'text-sm text-zinc-500'}>Calculateur</div>
                 <div className={isDark ? 'mt-1 text-xl font-semibold text-white' : 'mt-1 text-xl font-semibold text-zinc-900'}>Vos économies potentielles</div>
               </div>
-              <div className="text-2xl">🧮</div>
+              <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white/90' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 text-zinc-900'}>
+                <Calculator size={18} strokeWidth={1.5} />
+              </div>
             </div>
 
             <div className="mt-5 grid gap-4">
@@ -313,69 +332,167 @@ export default function App() {
             Un objet physique + des règles logicielles. Quand l&apos;envie arrive, vous n&apos;avez plus à négocier avec vous-même.
           </p>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {[
-              {
-                title: 'Inviolable',
-                desc: 'Acier renforcé. Forcer l’ouverture = boîtier détruit = 99€ perdus.',
-                emoji: '🛡️',
-              },
-              {
-                title: 'Planification intelligente',
-                desc: '“Tous les soirs de 21h à 7h” ou “en semaine pendant le travail”. Vous définissez, Candena applique.',
-                emoji: '📱',
-              },
-              {
-                title: 'Déverrouillage d’urgence',
-                desc: 'Toujours accessible, au prix que vous avez fixé. Une partie est reversée à une association anti-addictions, choisie par vous.',
-                emoji: '🚨',
-              },
-              {
-                title: '3 mois d’autonomie',
-                desc: 'Une charge USB‑C et on n’y pense plus pendant un trimestre.',
-                emoji: '🔋',
-              },
-              {
-                title: 'Format compact',
-                desc: '15×10 cm : votre téléphone, vape, cartes bancaires, snacks — tout rentre.',
-                emoji: '📦',
-              },
-              {
-                title: 'Finition premium',
-                desc: 'Un objet que vous n’aurez pas envie de cacher. Pensé pour rester sur votre bureau.',
-                emoji: '✨',
-              },
-            ].map((f) => (
-              <motion.div
-                key={f.title}
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.15 }}
-                className={
-                  isDark
-                    ? 'group rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_0_0_0_rgba(255,179,71,0)] hover:shadow-[0_0_0_1px_rgba(255,179,71,0.35),0_20px_80px_rgba(255,179,71,0.12)]'
-                    : 'group rounded-3xl border border-black/10 bg-white p-6 shadow-sm hover:shadow-[0_0_0_1px_rgba(255,179,71,0.35),0_20px_80px_rgba(255,179,71,0.12)]'
-                }
-              >
-                <div className="flex items-center justify-between">
-                  <div className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>{f.title}</div>
-                  <div className="text-xl">{f.emoji}</div>
+          <div className="mt-8 grid gap-4 md:grid-cols-3 md:grid-rows-[auto_auto_auto]">
+            {/* Inviolable (tall) */}
+            <motion.div
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.15 }}
+              className={
+                isDark
+                  ? 'md:row-span-2 rounded-xl border border-white/[0.06] bg-white/[0.03] p-6'
+                  : 'md:row-span-2 rounded-xl border border-black/10 bg-black/[0.02] p-6'
+              }
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className={isDark ? 'text-base font-semibold text-white' : 'text-base font-semibold text-zinc-900'}>Inviolable</div>
+                  <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>
+                    Acier renforcé. En pratique, vous n’avez pas “une petite marge”. Soit vous respectez vos règles, soit vous payez l’ouverture anticipée.
+                  </div>
                 </div>
-                <div className={isDark ? 'mt-3 text-sm text-white/70' : 'mt-3 text-sm text-zinc-600'}>{f.desc}</div>
-              </motion.div>
-            ))}
+                <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5'}>
+                  <Shield size={18} strokeWidth={1.5} />
+                </div>
+              </div>
+
+              <div className={isDark ? 'mt-5 rounded-lg border border-white/[0.10] bg-white/[0.06] p-4 text-sm text-white/70' : 'mt-5 rounded-lg border border-black/10 bg-black/[0.04] p-4 text-sm text-zinc-700'}>
+                Le but n’est pas de vous punir. C’est de rendre l’écart suffisamment réel pour qu’il ne soit plus automatique.
+              </div>
+            </motion.div>
+
+            {/* Planning */}
+            <motion.div
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.15 }}
+              className={isDark ? 'rounded-xl border border-white/[0.06] bg-white/[0.03] p-6' : 'rounded-xl border border-black/10 bg-black/[0.02] p-6'}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className={isDark ? 'text-base font-semibold text-white' : 'text-base font-semibold text-zinc-900'}>Planification intelligente</div>
+                  <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>
+                    Définissez vos plages, comme « tous les soirs de 21h à 7h » ou « en semaine pendant le travail ». Candena applique.
+                  </div>
+                </div>
+                <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5'}>
+                  <CalendarClock size={18} strokeWidth={1.5} />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Urgence */}
+            <motion.div
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.15 }}
+              className={isDark ? 'rounded-xl border border-white/[0.06] bg-white/[0.03] p-6' : 'rounded-xl border border-black/10 bg-black/[0.02] p-6'}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className={isDark ? 'text-base font-semibold text-white' : 'text-base font-semibold text-zinc-900'}>Déverrouillage d’urgence</div>
+                  <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>
+                    Toujours accessible, au prix que vous avez fixé. Une partie est reversée à une association de lutte contre les addictions, choisie par vous.
+                  </div>
+                </div>
+                <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5'}>
+                  <AlertTriangle size={18} strokeWidth={1.5} />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Autonomie */}
+            <motion.div
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.15 }}
+              className={isDark ? 'rounded-xl border border-white/[0.06] bg-white/[0.03] p-6' : 'rounded-xl border border-black/10 bg-black/[0.02] p-6'}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <div className={isDark ? 'text-base font-semibold text-white' : 'text-base font-semibold text-zinc-900'}>3 mois d’autonomie</div>
+                  <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>
+                    Une charge USB-C, puis vous n’y pensez plus pendant un trimestre.
+                  </div>
+                </div>
+                <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5'}>
+                  <BatteryFull size={18} strokeWidth={1.5} />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Format compact (span-2 with real photo) */}
+            <motion.div
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.15 }}
+              className={
+                isDark
+                  ? 'md:col-span-2 flex items-center gap-5 rounded-xl border border-white/[0.06] bg-white/[0.03] p-6'
+                  : 'md:col-span-2 flex items-center gap-5 rounded-xl border border-black/10 bg-black/[0.02] p-6'
+              }
+            >
+              <img
+                src={asset('assets/lifestyle_phone_insert.jpg')}
+                alt="Un téléphone dans le boîtier Candena"
+                className="h-24 w-24 flex-none rounded-lg object-cover md:h-28 md:w-28"
+              />
+              <div className="min-w-0 flex-1">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <div className={isDark ? 'text-base font-semibold text-white' : 'text-base font-semibold text-zinc-900'}>Format compact</div>
+                    <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>
+                      15×10 cm. Votre téléphone, vape, cartes bancaires, snacks, tout rentre.
+                    </div>
+                  </div>
+                  <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5'}>
+                    <Box size={18} strokeWidth={1.5} />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Finition premium (full width, horizontal) */}
+            <motion.div
+              whileHover={{ y: -2 }}
+              transition={{ duration: 0.15 }}
+              className={
+                isDark
+                  ? 'md:col-span-3 flex items-center justify-between gap-6 rounded-xl border border-white/[0.06] bg-white/[0.03] p-6'
+                  : 'md:col-span-3 flex items-center justify-between gap-6 rounded-xl border border-black/10 bg-black/[0.02] p-6'
+              }
+            >
+              <div className="flex items-start gap-4">
+                <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5'}>
+                  <Gem size={18} strokeWidth={1.5} />
+                </div>
+                <div>
+                  <div className={isDark ? 'text-base font-semibold text-white' : 'text-base font-semibold text-zinc-900'}>Finition premium</div>
+                  <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>
+                    Un objet que vous n’aurez pas envie de cacher. Pensé pour rester sur votre bureau, et vous rappeler votre décision.
+                  </div>
+                </div>
+              </div>
+              <div className={isDark ? 'hidden text-sm text-white/60 md:block' : 'hidden text-sm text-zinc-500 md:block'}>
+                Minimal. Durable. Clair.
+              </div>
+            </motion.div>
           </div>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <div className={isDark ? 'overflow-hidden rounded-3xl border border-white/10 bg-white/5' : 'overflow-hidden rounded-3xl border border-black/10 bg-white'}>
-              <img src="/assets/side_angle_specs.jpg" alt="Candena — specs" className="h-[260px] w-full object-cover" />
-              <div className={isDark ? 'p-5 text-sm text-white/70' : 'p-5 text-sm text-zinc-600'}>
-                Candena sous tous les angles — acier brossé, mécanisme anti-effraction.
+            <div className={isDark ? 'group relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.03]' : 'group relative overflow-hidden rounded-xl border border-black/10 bg-black/[0.02]'}>
+              <img
+                src={asset('assets/side_angle_specs.jpg')}
+                alt="Candena — specs"
+                className="h-[300px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] md:h-[340px]"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5">
+                <div className="text-sm text-white/90">Candena sous tous les angles, acier brossé, mécanisme anti-effraction.</div>
               </div>
             </div>
-            <div className={isDark ? 'overflow-hidden rounded-3xl border border-white/10 bg-white/5' : 'overflow-hidden rounded-3xl border border-black/10 bg-white'}>
-              <img src="/assets/detail_screen_1900.jpg" alt="App Candena" className="h-[260px] w-full object-cover" />
-              <div className={isDark ? 'p-5 text-sm text-white/70' : 'p-5 text-sm text-zinc-600'}>
-                L’app compagnon — programmez vos plages, suivez vos progrès, gérez les urgences.
+            <div className={isDark ? 'group relative overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.03]' : 'group relative overflow-hidden rounded-xl border border-black/10 bg-black/[0.02]'}>
+              <img
+                src={asset('assets/detail_screen_1900.jpg')}
+                alt="App Candena"
+                className="h-[300px] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] md:h-[340px]"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5">
+                <div className="text-sm text-white/90">L’app compagnon, programmez vos plages, suivez vos progrès, gérez les urgences.</div>
               </div>
             </div>
           </div>
@@ -384,46 +501,52 @@ export default function App() {
 
       {/* Science */}
       <section id="science" className={isDark ? 'border-t border-white/10' : 'border-t border-black/10'}>
-        <div className="mx-auto max-w-6xl px-4 py-16">
+        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
           <h2 className={isDark ? 'text-3xl font-semibold text-white' : 'text-3xl font-semibold text-zinc-900'}>La science derrière Candena</h2>
           <p className={isDark ? 'mt-3 max-w-3xl text-white/70' : 'mt-3 max-w-3xl text-zinc-600'}>
             Candena est un <span className="font-semibold">pre-commitment device</span>, un outil d’engagement anticipé. Vous définissez vos règles à tête reposée.
             Quand l’envie arrive, la décision est déjà prise. Pas de négociation. Pas de « juste cette fois ».
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {[
-              {
-                title: 'Moi d’aujourd’hui vs moi de demain',
-                desc: 'Votre “moi lucide” fixe les règles. Votre “moi impulsif” ne peut que les suivre — ou payer.',
-                emoji: '🔄',
-              },
-              {
-                title: 'Fatigue décisionnelle',
-                desc: 'Le soir, votre volonté est au plus bas. Candena prend le relais quand vous ne pouvez plus.',
-                emoji: '⚡',
-              },
-              {
-                title: 'Effet cumulatif',
-                desc: 'Chaque soir où la boîte reste fermée renforce votre confiance. 30 jours = un nouveau standard.',
-                emoji: '💸',
-              },
-            ].map((c) => (
-              <div key={c.title} className={isDark ? 'rounded-3xl border border-white/10 bg-white/5 p-6' : 'rounded-3xl border border-black/10 bg-black/5 p-6'}>
-                <div className="text-xl">{c.emoji}</div>
-                <div className={isDark ? 'mt-3 text-lg font-semibold text-white' : 'mt-3 text-lg font-semibold text-zinc-900'}>{c.title}</div>
-                <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>{c.desc}</div>
+            <div className={isDark ? 'rounded-xl border border-white/[0.06] bg-white/[0.03] p-6' : 'rounded-xl border border-black/10 bg-black/[0.02] p-6'}>
+              <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5'}>
+                <RefreshCcw size={18} strokeWidth={1.5} />
               </div>
-            ))}
+              <div className={isDark ? 'mt-4 text-base font-semibold text-white' : 'mt-4 text-base font-semibold text-zinc-900'}>Moi d’aujourd’hui vs moi de demain</div>
+              <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>
+                Votre moi lucide fixe les règles. Votre moi impulsif ne peut que les suivre, ou payer.
+              </div>
+            </div>
+
+            <div className={isDark ? 'rounded-xl border border-white/[0.06] bg-white/[0.03] p-6' : 'rounded-xl border border-black/10 bg-black/[0.02] p-6'}>
+              <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5'}>
+                <BrainCircuit size={18} strokeWidth={1.5} />
+              </div>
+              <div className={isDark ? 'mt-4 text-base font-semibold text-white' : 'mt-4 text-base font-semibold text-zinc-900'}>Fatigue décisionnelle</div>
+              <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>
+                Le soir, votre volonté est au plus bas. Candena prend le relais quand vous ne pouvez plus.
+              </div>
+            </div>
+
+            <div className={isDark ? 'rounded-xl border border-white/[0.06] bg-white/[0.03] p-6' : 'rounded-xl border border-black/10 bg-black/[0.02] p-6'}>
+              <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5'}>
+                <TrendingUp size={18} strokeWidth={1.5} />
+              </div>
+              <div className={isDark ? 'mt-4 text-base font-semibold text-white' : 'mt-4 text-base font-semibold text-zinc-900'}>Effet cumulatif</div>
+              <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>
+                Chaque soir où la boîte reste fermée renforce votre confiance. En quelques semaines, vous changez votre standard.
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ */}
       <section id="faq" className={isDark ? 'border-t border-white/10' : 'border-t border-black/10'}>
-        <div className="mx-auto max-w-6xl px-4 py-16">
+        <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
           <h2 className={isDark ? 'text-3xl font-semibold text-white' : 'text-3xl font-semibold text-zinc-900'}>Questions fréquentes</h2>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {[
+          {(() => {
+            const faqs = [
               {
                 q: 'Et si j’ai une vraie urgence ?',
                 a: 'Vous pouvez toujours ouvrir la boîte via l’app. Cela déclenche le montant que vous avez choisi, par exemple 5€, 10€, 50€ ou 100€. Une partie est reversée à une association de lutte contre les addictions, choisie par vous. C’est votre engagement, votre prix.',
@@ -434,30 +557,63 @@ export default function App() {
               },
               {
                 q: 'Pourquoi 99€ et pas moins ?',
-                a: '99€ c’est le prix Early Bird — le prix final sera 149€. Vous financez la première série de 500 unités et vous sécurisez votre exemplaire à tarif réduit.',
+                a: '99€ est le prix Early Bird. Le prix final sera 149€. Vous financez la première série de 500 unités et vous sécurisez votre exemplaire à tarif réduit.',
               },
               {
                 q: 'Où va l’argent des pénalités ?',
-                a: 'Quand vous déverrouillez avant l’heure, le montant que vous avez fixé est débité. Une partie est reversée à une association de lutte contre les addictions, choisie par vous. Le reste couvre les frais de transaction et d’opération. Votre ouverture anticipée soutient une cause utile, plutôt que la culpabilité.',
+                a: 'Quand vous déverrouillez avant l’heure, le montant que vous avez fixé est débité. Une partie est reversée à une association de lutte contre les addictions, choisie par vous. Le reste couvre les frais de transaction et d’opération.',
               },
-            ].map((it) => (
-              <div key={it.q} className={isDark ? 'rounded-3xl border border-white/10 bg-white/5 p-6' : 'rounded-3xl border border-black/10 bg-black/5 p-6'}>
-                <div className={isDark ? 'text-base font-semibold text-white' : 'text-base font-semibold text-zinc-900'}>{it.q}</div>
-                <div className={isDark ? 'mt-2 text-sm text-white/70' : 'mt-2 text-sm text-zinc-600'}>{it.a}</div>
+            ]
+
+            return (
+              <div className={isDark ? 'mt-8 divide-y divide-white/[0.06] rounded-xl border border-white/[0.06] bg-white/[0.03] px-5' : 'mt-8 divide-y divide-black/10 rounded-xl border border-black/10 bg-black/[0.02] px-5'}>
+                {faqs.map((faq, i) => (
+                  <div key={faq.q} className="py-5">
+                    <button
+                      onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                      className="flex w-full items-center justify-between gap-6 text-left"
+                    >
+                      <span className={isDark ? 'text-base font-medium text-white' : 'text-base font-medium text-zinc-900'}>{faq.q}</span>
+                      <ChevronDown
+                        size={18}
+                        strokeWidth={1.5}
+                        className={
+                          (isDark ? 'text-white/70 ' : 'text-zinc-500 ') +
+                          'transition-transform duration-200 ' +
+                          (openFaq === i ? 'rotate-180' : '')
+                        }
+                      />
+                    </button>
+                    {openFaq === i ? (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <p className={isDark ? 'mt-3 text-sm text-white/70' : 'mt-3 text-sm text-zinc-600'}>{faq.a}</p>
+                      </motion.div>
+                    ) : null}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            )
+          })()}
         </div>
       </section>
 
       {/* Pricing */}
       <section id="pricing" className={isDark ? 'border-t border-white/10' : 'border-t border-black/10'}>
-        <div className="mx-auto max-w-6xl px-4 py-16">
-          <div className={isDark ? 'rounded-[32px] border border-white/10 bg-white/5 p-8 md:p-10' : 'rounded-[32px] border border-black/10 bg-black/5 p-8 md:p-10'}>
+        <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
+          <div className={isDark ? 'rounded-2xl border border-[#ffb347]/30 bg-white/[0.06] p-8 md:p-10' : 'rounded-2xl border border-[#ffb347]/25 bg-black/[0.04] p-8 md:p-10'}>
             <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
               <div>
                 <div className={isDark ? 'text-sm text-white/60' : 'text-sm text-zinc-500'}>Édition Early Bird • 500 exemplaires</div>
-                <div className={isDark ? 'mt-2 text-4xl font-semibold text-white' : 'mt-2 text-4xl font-semibold text-zinc-900'}>99€</div>
+                <div className="mt-2 flex items-baseline gap-3">
+                  <span className={isDark ? 'text-4xl font-semibold text-white' : 'text-4xl font-semibold text-zinc-900'}>99€</span>
+                  <span className={isDark ? 'text-lg text-white/40 line-through' : 'text-lg text-zinc-400 line-through'}>149€</span>
+                </div>
                 <div className={isDark ? 'mt-2 text-white/70' : 'mt-2 text-zinc-600'}>
                   Production limitée à 500 unités • Livraison prévue Q4 2026
                 </div>
@@ -471,14 +627,14 @@ export default function App() {
                   href="#"
                   className={
                     isDark
-                      ? 'mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-white px-6 py-4 text-sm font-semibold text-black shadow-glow hover:opacity-95'
-                      : 'mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-black px-6 py-4 text-sm font-semibold text-white hover:opacity-95'
+                      ? 'mt-5 inline-flex w-full items-center justify-center rounded-xl bg-[#ffb347] px-6 py-4 text-sm font-semibold text-black transition-colors hover:bg-[#ffc06a]'
+                      : 'mt-5 inline-flex w-full items-center justify-center rounded-xl bg-[#ffb347] px-6 py-4 text-sm font-semibold text-black transition-colors hover:bg-[#ffc06a]'
                   }
                 >
-                  Je réserve mon exemplaire — 99€
+                  Je réserve mon exemplaire, 99€
                 </a>
                 <div className={isDark ? 'mt-3 text-xs text-white/50' : 'mt-3 text-xs text-zinc-500'}>
-                  💡 C&apos;est une précommande, un vrai pari sur vous-même. Mais si vous cherchez un outil sérieux pour tenir vos engagements, c&apos;est celui-là.
+                  C&apos;est une précommande, un vrai pari sur vous-même. Si vous cherchez un outil sérieux pour tenir vos engagements, c&apos;est celui-là.
                 </div>
               </div>
             </div>
@@ -488,7 +644,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className={isDark ? 'border-t border-white/10' : 'border-t border-black/10'}>
-        <div className="mx-auto max-w-6xl px-4 py-12">
+        <div className="mx-auto max-w-6xl px-4 py-10 md:py-14">
           <div className="grid gap-8 md:grid-cols-3">
             <div>
               <div className={isDark ? 'text-sm font-semibold text-white' : 'text-sm font-semibold text-zinc-900'}>Produit</div>

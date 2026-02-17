@@ -318,42 +318,78 @@ export default function Guide() {
 
               <section className="grid gap-3">
                 <h3 className={isDark ? 'text-lg font-semibold text-white' : 'text-lg font-semibold text-zinc-900'}>
-                  Sources accessibles (pour aller plus loin)
+                  Sources et études (liens)
                 </h3>
                 <p className={isDark ? 'text-sm text-white/70' : 'text-sm text-zinc-600'}>
-                  Ces liens sont des points d’entrée lisibles. Ils expliquent les concepts sans jargon académique.
+                  Pour éviter les références vagues, voici des liens vers des synthèses lisibles et vers des articles académiques (via Google Scholar).
                 </p>
-                <ul className={isDark ? 'list-disc pl-5 text-white/80' : 'list-disc pl-5 text-zinc-700'}>
-                  <li className="mt-2">
-                    <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://www.behavioraleconomics.com/resources/mini-encyclopedia-of-be/" target="_blank" rel="noreferrer">
-                      BehavioralEconomics.com (mini-encyclopédie)
-                    </a>
-                    <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> : définitions (biais du présent, engagement, friction).</span>
-                  </li>
-                  <li className="mt-2">
-                    <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://en.wikipedia.org/wiki/Present_bias" target="_blank" rel="noreferrer">
-                      Present bias (article de synthèse)
-                    </a>
-                    <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> : pourquoi le court terme prend le dessus.</span>
-                  </li>
-                  <li className="mt-2">
-                    <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://en.wikipedia.org/wiki/Decision_fatigue" target="_blank" rel="noreferrer">
-                      Decision fatigue (synthèse)
-                    </a>
-                    <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> : pourquoi les décisions deviennent plus difficiles au fil de la journée.</span>
-                  </li>
-                  <li className="mt-2">
-                    <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://en.wikipedia.org/wiki/Commitment_device" target="_blank" rel="noreferrer">
-                      Commitment devices (engagement préalable)
-                    </a>
-                    <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> : le principe derrière Candena (externaliser une partie de la discipline).</span>
-                  </li>
-                </ul>
 
-                <div className={isDark ? 'mt-2 rounded-xl border border-white/[0.10] bg-white/[0.04] p-5 text-sm text-white/70' : 'mt-2 rounded-xl border border-black/10 bg-black/[0.03] p-5 text-sm text-zinc-700'}>
-                  <div className={isDark ? 'font-medium text-white' : 'font-medium text-zinc-900'}>Note sur les chiffres</div>
+                <div className={isDark ? 'rounded-xl border border-white/[0.10] bg-white/[0.04] p-5' : 'rounded-xl border border-black/10 bg-black/[0.03] p-5'}>
+                  <div className={isDark ? 'text-sm font-medium text-white' : 'text-sm font-medium text-zinc-900'}>Synthèses accessibles</div>
+                  <ul className={isDark ? 'mt-3 list-disc pl-5 text-sm text-white/80' : 'mt-3 list-disc pl-5 text-sm text-zinc-700'}>
+                    <li className="mt-2">
+                      <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://www.behavioraleconomics.com/resources/mini-encyclopedia-of-be/" target="_blank" rel="noreferrer">
+                        BehavioralEconomics.com (mini-encyclopédie)
+                      </a>
+                    </li>
+                    <li className="mt-2">
+                      <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://en.wikipedia.org/wiki/Present_bias" target="_blank" rel="noreferrer">
+                        Biais du présent (présentation)
+                      </a>
+                    </li>
+                    <li className="mt-2">
+                      <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://en.wikipedia.org/wiki/Decision_fatigue" target="_blank" rel="noreferrer">
+                        Fatigue décisionnelle (présentation)
+                      </a>
+                    </li>
+                    <li className="mt-2">
+                      <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://en.wikipedia.org/wiki/Commitment_device" target="_blank" rel="noreferrer">
+                        Dispositifs d’engagement (présentation)
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className={isDark ? 'rounded-xl border border-white/[0.10] bg-white/[0.04] p-5' : 'rounded-xl border border-black/10 bg-black/[0.03] p-5'}>
+                  <div className={isDark ? 'text-sm font-medium text-white' : 'text-sm font-medium text-zinc-900'}>Études (Google Scholar)</div>
+                  <ul className={isDark ? 'mt-3 list-disc pl-5 text-sm text-white/80' : 'mt-3 list-disc pl-5 text-sm text-zinc-700'}>
+                    <li className="mt-2">
+                      <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://scholar.google.com/scholar?q=Laibson+Golden+Eggs+and+Hyperbolic+Discounting" target="_blank" rel="noreferrer">
+                        Laibson (1997) — Golden Eggs and Hyperbolic Discounting
+                      </a>
+                      <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> (biais du présent / hyperbolic discounting)</span>
+                    </li>
+                    <li className="mt-2">
+                      <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://scholar.google.com/scholar?q=O%27Donoghue+Rabin+Doing+It+Now+or+Later" target="_blank" rel="noreferrer">
+                        O’Donoghue & Rabin (1999) — Doing It Now or Later
+                      </a>
+                      <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> (present bias / procrastination)</span>
+                    </li>
+                    <li className="mt-2">
+                      <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://scholar.google.com/scholar?q=Ariely+Wertenbroch+Procrastination+Deadlines+and+Performance" target="_blank" rel="noreferrer">
+                        Ariely & Wertenbroch (2002) — Procrastination, Deadlines, and Performance
+                      </a>
+                      <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> (engagement par contraintes / pré-commitment)</span>
+                    </li>
+                    <li className="mt-2">
+                      <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://scholar.google.com/scholar?q=Vohs+Baumeister+Schmeichel+Making+Choices+Impairs+Subsequent+Self-Control" target="_blank" rel="noreferrer">
+                        Vohs et al. (2008) — Making Choices Impairs Subsequent Self-Control
+                      </a>
+                      <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> (fatigue décisionnelle)</span>
+                    </li>
+                    <li className="mt-2">
+                      <a className={isDark ? 'underline decoration-white/20 underline-offset-4 hover:decoration-white/40' : 'underline decoration-black/20 underline-offset-4 hover:decoration-black/40'} href="https://scholar.google.com/scholar?q=Gine+Karlan+Zinman+Put+Your+Money+Where+Your+Butt+Is" target="_blank" rel="noreferrer">
+                        Giné, Karlan & Zinman (2010) — Put Your Money Where Your Butt Is
+                      </a>
+                      <span className={isDark ? 'text-white/60' : 'text-zinc-500'}> (contrats d’engagement / addictions)</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className={isDark ? 'rounded-xl border border-white/[0.10] bg-white/[0.04] p-5 text-sm text-white/70' : 'rounded-xl border border-black/10 bg-black/[0.03] p-5 text-sm text-zinc-700'}>
+                  <div className={isDark ? 'font-medium text-white' : 'font-medium text-zinc-900'}>Note</div>
                   <p className="mt-2">
-                    Certains chiffres cités dans ce guide circulent sous forme de synthèses (2023–2024). L’idée à retenir est robuste : l’environnement et le timing des décisions pèsent souvent plus que la motivation.
+                    Les chiffres précis peuvent varier selon les études et les définitions. Le mécanisme, lui, est constant : le timing des décisions et l’environnement pèsent souvent plus que la motivation.
                   </p>
                 </div>
               </section>

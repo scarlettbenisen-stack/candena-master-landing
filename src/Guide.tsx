@@ -278,6 +278,9 @@ export default function Guide() {
                   Concrètement, vous pouvez calibrer votre engagement : un montant bas pour commencer, puis plus élevé si vous voyez que “l’ouverture facile” devient un automatisme. L’important est que le choix vous appartienne. Candena n’impose pas une morale. Il rend votre règle exécutable.
                 </p>
                 <p>
+                  Et si vous savez que « payer pour tricher » vous ferait craquer, vous pouvez aussi choisir un mode strict : aucun prix, aucun déverrouillage anticipé. C’est souvent là que Candena est le plus puissant, parce qu’il retire l’option de négociation.
+                </p>
+                <p>
                   Des études rapportent que les personnes utilisant des dispositifs d’engagement préalable sont significativement plus susceptibles de tenir leurs objectifs à long terme que celles qui comptent uniquement sur leur volonté. Là encore, gardez l’idée centrale : ce qui marche n’est pas la culpabilité, c’est la structure.
                 </p>
               </section>
@@ -432,7 +435,7 @@ export default function Guide() {
                   Réserver, 99€
                 </a>
                 <a href={asset('')} className={isDark ? 'inline-flex items-center justify-center rounded-xl border border-white/[0.10] bg-white/[0.03] px-6 py-3 text-sm font-semibold text-white/90 hover:bg-white/[0.06]' : 'inline-flex items-center justify-center rounded-xl border border-black/10 bg-black/[0.02] px-6 py-3 text-sm font-semibold text-zinc-900 hover:bg-black/[0.05]'}>
-                  Voir la landing
+                  Revenir à Candena
                 </a>
               </div>
             </div>

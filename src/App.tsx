@@ -33,7 +33,7 @@ const habitLabels: Record<Habit, string> = {
 const habitImages: Partial<Record<Habit, string>> = {
   vape: 'assets/hero_vape_insert_1900.png',
   telephone: 'assets/hero_phone_insert_1900.png',
-  weed: 'assets/lifestyle_weed.jpg',
+  weed: 'assets/hero_weed_insert_1900.png',
 }
 
 function euro(n: number) {
@@ -204,13 +204,13 @@ export default function App() {
               className={isDark ? 'relative overflow-hidden rounded-2xl border border-white/[0.10] bg-white/[0.06] p-4 shadow-2xl' : 'relative overflow-hidden rounded-2xl border border-black/10 bg-white p-4 shadow-2xl'}
             >
               <img
-                src={asset('assets/hero_packshot_closed_1900.png')}
+                src={asset('assets/hero_packshot_closed_1900_v2.png')}
                 alt="Boîtier Candena"
                 className="h-[360px] w-full rounded-xl object-cover md:h-[460px]"
               />
 
               {/* Hero header visuals (use cases) */}
-              <div className="mt-4 grid grid-cols-2 gap-3">
+              <div className="mt-4 grid grid-cols-3 gap-3">
                 <div className={isDark ? 'group relative overflow-hidden rounded-lg border border-white/[0.10] bg-white/[0.03]' : 'group relative overflow-hidden rounded-lg border border-black/10 bg-black/[0.02]'}>
                   <img
                     src={asset('assets/hero_vape_insert_1900.png')}
@@ -229,6 +229,16 @@ export default function App() {
                   />
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-3 py-2">
                     <div className="text-xs text-white/90">Téléphone</div>
+                  </div>
+                </div>
+                <div className={isDark ? 'group relative overflow-hidden rounded-lg border border-white/[0.10] bg-white/[0.03]' : 'group relative overflow-hidden rounded-lg border border-black/10 bg-black/[0.02]'}>
+                  <img
+                    src={asset('assets/hero_weed_insert_1900.png')}
+                    alt="Candena, cas d’usage weed ou CBD"
+                    className="h-24 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-3 py-2">
+                    <div className="text-xs text-white/90">Weed / CBD</div>
                   </div>
                 </div>
               </div>

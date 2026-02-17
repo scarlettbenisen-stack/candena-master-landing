@@ -30,6 +30,12 @@ const habitLabels: Record<Habit, string> = {
   autre: 'Autre',
 }
 
+const habitImages: Partial<Record<Habit, string>> = {
+  vape: 'assets/lifestyle_vape.jpg',
+  telephone: 'assets/lifestyle_phone_insert.jpg',
+  weed: 'assets/lifestyle_weed.jpg',
+}
+
 function euro(n: number) {
   return new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n)
 }
@@ -197,9 +203,38 @@ export default function App() {
               transition={{ duration: 0.45, delay: 0.05 }}
               className={isDark ? 'relative overflow-hidden rounded-2xl border border-white/[0.10] bg-white/[0.06] p-4 shadow-2xl' : 'relative overflow-hidden rounded-2xl border border-black/10 bg-white p-4 shadow-2xl'}
             >
-              <img src={asset('assets/hero_packshot_closed.jpg')} alt="Boîtier Candena" className="h-[360px] w-full rounded-xl object-cover md:h-[460px]" />
+              <img
+                src={asset('assets/hero_packshot_closed.jpg')}
+                alt="Boîtier Candena"
+                className="h-[360px] w-full rounded-xl object-cover md:h-[460px]"
+              />
+
+              {/* Hero header visuals (use cases) */}
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                <div className={isDark ? 'group relative overflow-hidden rounded-lg border border-white/[0.10] bg-white/[0.03]' : 'group relative overflow-hidden rounded-lg border border-black/10 bg-black/[0.02]'}>
+                  <img
+                    src={asset('assets/lifestyle_vape.jpg')}
+                    alt="Candena, cas d’usage vape"
+                    className="h-24 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-3 py-2">
+                    <div className="text-xs text-white/90">Vape</div>
+                  </div>
+                </div>
+                <div className={isDark ? 'group relative overflow-hidden rounded-lg border border-white/[0.10] bg-white/[0.03]' : 'group relative overflow-hidden rounded-lg border border-black/10 bg-black/[0.02]'}>
+                  <img
+                    src={asset('assets/lifestyle_weed.jpg')}
+                    alt="Candena, cas d’usage weed ou CBD"
+                    className="h-24 w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-3 py-2">
+                    <div className="text-xs text-white/90">Weed / CBD</div>
+                  </div>
+                </div>
+              </div>
+
               <div className={isDark ? 'mt-4 text-sm text-white/70' : 'mt-4 text-sm text-zinc-600'}>
-                Candena — Acier renforcé, finition premium, format 15×10 cm.
+                Candena : acier renforcé, finition premium, format 15×10 cm.
               </div>
             </motion.div>
           </div>
@@ -250,8 +285,21 @@ export default function App() {
                 <div className={isDark ? 'text-sm text-white/60' : 'text-sm text-zinc-500'}>Calculateur</div>
                 <div className={isDark ? 'mt-1 text-xl font-semibold text-white' : 'mt-1 text-xl font-semibold text-zinc-900'}>Vos économies potentielles</div>
               </div>
-              <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white/90' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 text-zinc-900'}>
-                <Calculator size={18} strokeWidth={1.5} />
+
+              <div className="flex items-center gap-3">
+                {habitImages[habit] ? (
+                  <div className={isDark ? 'group relative h-9 w-12 overflow-hidden rounded-lg border border-white/[0.10] bg-white/[0.03]' : 'group relative h-9 w-12 overflow-hidden rounded-lg border border-black/10 bg-black/[0.02]'}>
+                    <img
+                      src={asset(habitImages[habit] as string)}
+                      alt="Illustration de l’habitude sélectionnée"
+                      className="h-9 w-12 object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    />
+                  </div>
+                ) : null}
+
+                <div className={isDark ? 'flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white/90' : 'flex h-9 w-9 items-center justify-center rounded-lg bg-black/5 text-zinc-900'}>
+                  <Calculator size={18} strokeWidth={1.5} />
+                </div>
               </div>
             </div>
 

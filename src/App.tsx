@@ -160,6 +160,10 @@ export default function App() {
             >
               Vous fixez le prix. Vous gardez le contrôle.
             </motion.h1>
+            <div className={isDark ? 'mt-4 max-w-xl text-base italic text-white/65' : 'mt-4 max-w-xl text-base italic text-zinc-500'}>
+              Pas parce que vous manquez de volonté. Parce que personne ne peut négocier avec lui-même et gagner.
+            </div>
+
             <p className={isDark ? 'mt-4 max-w-xl text-lg text-white/70' : 'mt-4 max-w-xl text-lg text-zinc-600'}>
               Candena verrouille vos tentations. Chaque écart a un prix que vous avez choisi vous-même, dont la moitié part à une cause qui le mérite.
               Une façon de vous tenir à vos propres règles, même quand l’envie est là.
@@ -167,24 +171,24 @@ export default function App() {
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#pricing"
+                href="#test"
                 className={
                   isDark
                     ? 'inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-black shadow-glow hover:opacity-95'
                     : 'inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:opacity-95'
                 }
               >
-                Réserver mon exemplaire — 99€
+                Calculer ce que me coûtent mes habitudes
               </a>
               <a
-                href="#test"
+                href="#pricing"
                 className={
                   isDark
                     ? 'inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white/90 hover:bg-white/10'
                     : 'inline-flex items-center justify-center rounded-full border border-black/15 bg-black/5 px-6 py-3 text-sm font-semibold text-zinc-900 hover:bg-black/10'
                 }
               >
-                Calculer ce que me coûtent mes habitudes
+                Réserver mon exemplaire — 99€
               </a>
             </div>
 
@@ -262,7 +266,7 @@ export default function App() {
             </p>
 
             <div className={isDark ? 'mt-6 rounded-xl border border-white/[0.10] bg-white/[0.06] p-5' : 'mt-6 rounded-xl border border-black/10 bg-black/[0.04] p-5'}>
-              <div className={isDark ? 'text-sm text-white/60' : 'text-sm text-zinc-500'}>1 200+ personnes ont déjà reçu le guide.</div>
+              {/* (preuve sociale retirée) */}
               <form
                 className="mt-4 flex flex-col gap-3 sm:flex-row"
                 onSubmit={(e) => {
@@ -691,9 +695,9 @@ export default function App() {
                 </div>
               </div>
               <div className="w-full max-w-md">
-                <div className={isDark ? 'text-sm text-white/70' : 'text-sm text-zinc-600'}>85% des 500 exemplaires déjà réservés</div>
+                <div className={isDark ? 'text-sm text-white/70' : 'text-sm text-zinc-600'}>20% des 500 exemplaires déjà réservés</div>
                 <div className={isDark ? 'mt-2 h-3 w-full rounded-full bg-white/10' : 'mt-2 h-3 w-full rounded-full bg-black/10'}>
-                  <div className="h-3 w-[85%] rounded-full bg-[#ffb347]" />
+                  <div className="h-3 w-[20%] rounded-full bg-[#ffb347]" />
                 </div>
                 <a
                   href="#"
@@ -706,7 +710,8 @@ export default function App() {
                   Je réserve mon exemplaire, 99€
                 </a>
                 <div className={isDark ? 'mt-3 text-xs text-white/50' : 'mt-3 text-xs text-zinc-500'}>
-                  C&apos;est une précommande, un vrai pari sur vous-même. Si vous cherchez un outil sérieux pour tenir vos engagements, c&apos;est celui-là.
+                  C&apos;est une précommande, un vrai pari sur vous-même.
+                  <span className="ml-1 opacity-90">Un pari sur vous-même, à 99€.</span>
                 </div>
               </div>
             </div>

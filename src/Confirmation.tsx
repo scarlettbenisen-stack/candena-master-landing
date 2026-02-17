@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import './index.css'
 import { applyTheme, getInitialTheme, type Theme } from './theme'
 import { ThemeToggle } from './components/ThemeToggle'
+import { LogoMark } from './components/LogoMark'
 import { asset } from './assets'
 
 export default function Confirmation() {
@@ -33,7 +34,7 @@ export default function Confirmation() {
       <header className={isDark ? 'border-b border-white/10 bg-black/70 backdrop-blur' : 'border-b border-black/10 bg-white/70 backdrop-blur'}>
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <a href={asset('')} className="flex items-center gap-2">
-            <div className={isDark ? 'h-8 w-8 rounded-xl bg-white/10 ring-1 ring-white/10' : 'h-8 w-8 rounded-xl bg-black/5 ring-1 ring-black/10'} />
+            <LogoMark theme={isDark ? 'dark' : 'light'} />
             <div className="leading-tight">
               <div className="text-sm font-semibold tracking-tight">Candena</div>
               <div className={isDark ? 'text-xs text-white/60' : 'text-xs text-zinc-500'}>Confirmation</div>

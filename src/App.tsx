@@ -4,6 +4,7 @@ import './index.css'
 import { applyTheme, getInitialTheme, type Theme } from './theme'
 import { ThemeToggle } from './components/ThemeToggle'
 import { MobileMenu } from './components/MobileMenu'
+import { LogoMark } from './components/LogoMark'
 import { asset } from './assets'
 import {
   AlertTriangle,
@@ -99,7 +100,7 @@ export default function App() {
       >
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
           <a href="#hero" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
-            <div className={isDark ? 'h-8 w-8 rounded-xl bg-white/10 ring-1 ring-white/10' : 'h-8 w-8 rounded-xl bg-black/5 ring-1 ring-black/10'} />
+            <LogoMark theme={isDark ? 'dark' : 'light'} />
             <div className="leading-tight">
               <div className="text-sm font-semibold tracking-tight">Candena</div>
               <div className={isDark ? 'text-xs text-white/60' : 'text-xs text-zinc-500'}>Candena Master</div>

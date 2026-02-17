@@ -288,7 +288,7 @@ export default function Guide() {
                 </h3>
                 <ol className={isDark ? 'list-decimal pl-5 text-white/85' : 'list-decimal pl-5 text-zinc-800'}>
                   <li className="mt-2">
-                    <span className="font-medium">Identifiez votre dépendance principale.</span> Commencez par une habitude spécifique plutôt qu’une intention vague. « Réduire mon temps sur mon téléphone » est flou. « Verrouiller mon téléphone de 21h à 7h » est mesurable.
+                    <span className="font-medium">Identifiez votre dépendance principale.</span> Commencez par une dépendance spécifique plutôt qu’une intention vague. « Réduire mon temps sur mon téléphone » est flou. « Verrouiller mon téléphone de 21h à 7h » est mesurable.
                   </li>
                   <li className="mt-2">
                     <span className="font-medium">Définissez des règles claires et précises.</span> Les règles doivent éliminer l’ambiguïté. Au lieu de « moins de vapotage », essayez « pas de vape avant 18h en semaine ». Vous n’avez pas besoin de règles parfaites, vous avez besoin de règles nettes.

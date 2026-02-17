@@ -183,7 +183,7 @@ export default function App() {
                     : 'inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-semibold text-white hover:opacity-95'
                 }
               >
-                Calculer ce que me coûtent mes habitudes
+                Calculer ce que me coûtent mes dépendances
               </a>
               <a
                 href="#pricing"
@@ -264,9 +264,9 @@ export default function App() {
       <section id="test" className={isDark ? 'border-t border-white/10' : 'border-t border-black/10'}>
         <div className="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:grid-cols-2 md:py-20">
           <div>
-            <h2 className={isDark ? 'text-3xl font-semibold text-white' : 'text-3xl font-semibold text-zinc-900'}>Combien vous coûtent vos habitudes ?</h2>
+            <h2 className={isDark ? 'text-3xl font-semibold text-white' : 'text-3xl font-semibold text-zinc-900'}>Combien vous coûtent vos dépendances ?</h2>
             <p className={isDark ? 'mt-3 text-white/70' : 'mt-3 text-zinc-600'}>
-              Pas encore décidé ? Calculez d&apos;abord ce que vos habitudes vous coûtent chaque année. Ensuite, recevez gratuitement
+              Pas encore décidé ? Calculez d&apos;abord ce que vos dépendances vous coûtent chaque année. Ensuite, recevez gratuitement
               <span className="font-semibold"> « Le Protocole Candena »</span> — notre guide pour reprendre le contrôle, étape par étape.
             </p>
 
@@ -324,7 +324,7 @@ export default function App() {
                   <div className={isDark ? 'group relative h-9 w-12 overflow-hidden rounded-lg border border-white/[0.10] bg-white/[0.03]' : 'group relative h-9 w-12 overflow-hidden rounded-lg border border-black/10 bg-black/[0.02]'}>
                     <img
                       src={asset(habitImages[habit] as string)}
-                      alt="Illustration de l’habitude sélectionnée"
+                      alt="Illustration de la dépendance sélectionnée"
                       className="h-9 w-12 object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
@@ -338,7 +338,7 @@ export default function App() {
 
             <div className="mt-5 grid gap-4">
               <label className="grid gap-2">
-                <span className={isDark ? 'text-sm text-white/70' : 'text-sm text-zinc-700'}>Quelle habitude voulez-vous contrôler ?</span>
+                <span className={isDark ? 'text-sm text-white/70' : 'text-sm text-zinc-700'}>Quelle dépendance voulez-vous contrôler ?</span>
                 <select
                   value={habit}
                   onChange={(e) => setHabit(e.target.value as Habit)}

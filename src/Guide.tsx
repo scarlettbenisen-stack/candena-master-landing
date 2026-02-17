@@ -106,7 +106,7 @@ export default function Guide() {
               Le Protocole Candena
             </motion.h1>
             <p className={isDark ? 'mt-4 max-w-xl text-base leading-relaxed text-white/70' : 'mt-4 max-w-xl text-base leading-relaxed text-zinc-600'}>
-              Un guide clair et pratico-pratique pour reprendre le contrôle de vos habitudes. Pas de culpabilisation, pas de morale. Des mécanismes, des règles simples, et un plan d’action.
+              Un guide clair et pratico-pratique pour reprendre le contrôle de vos dépendances. Pas de culpabilisation, pas de morale. Des mécanismes, des règles simples, et un plan d’action.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
@@ -191,7 +191,7 @@ export default function Guide() {
           <article className={isDark ? 'text-white/85' : 'text-zinc-800'}>
 
             <h2 className={isDark ? 'text-2xl font-semibold text-white' : 'text-2xl font-semibold text-zinc-900'}>
-              Candena : l’ultime outil pour en finir avec vos mauvaises habitudes
+              Candena : l’ultime outil pour en finir avec vos mauvaises dépendances
             </h2>
             <p className={isDark ? 'mt-2 text-sm text-white/60' : 'mt-2 text-sm text-zinc-500'}>
               Basé sur l’économie comportementale et le principe d’engagement anticipé.
@@ -288,13 +288,13 @@ export default function Guide() {
                 </h3>
                 <ol className={isDark ? 'list-decimal pl-5 text-white/85' : 'list-decimal pl-5 text-zinc-800'}>
                   <li className="mt-2">
-                    <span className="font-medium">Identifiez votre habitude principale.</span> Commencez par une habitude spécifique plutôt qu’une intention vague. « Réduire mon temps sur mon téléphone » est flou. « Verrouiller mon téléphone de 21h à 7h » est mesurable.
+                    <span className="font-medium">Identifiez votre dépendance principale.</span> Commencez par une habitude spécifique plutôt qu’une intention vague. « Réduire mon temps sur mon téléphone » est flou. « Verrouiller mon téléphone de 21h à 7h » est mesurable.
                   </li>
                   <li className="mt-2">
                     <span className="font-medium">Définissez des règles claires et précises.</span> Les règles doivent éliminer l’ambiguïté. Au lieu de « moins de vapotage », essayez « pas de vape avant 18h en semaine ». Vous n’avez pas besoin de règles parfaites, vous avez besoin de règles nettes.
                   </li>
                   <li className="mt-2">
-                    <span className="font-medium">Préparez votre environnement pour le succès.</span> Rendez les bonnes habitudes faciles et les mauvaises difficiles. Placez votre téléphone dans Candena avant de vous coucher, plutôt que de le garder à portée de main.
+                    <span className="font-medium">Préparez votre environnement pour le succès.</span> Rendez les bonnes décisions faciles et les mauvaises difficiles. Placez votre téléphone dans Candena avant de vous coucher, plutôt que de le garder à portée de main.
                   </li>
                 </ol>
 
@@ -335,7 +335,7 @@ export default function Guide() {
                   Candena n’est pas une solution magique. C’est un outil qui vous aide à aligner vos actions avec vos intentions profondes. En externalisant une partie de la discipline, vous créez l’espace nécessaire pour que votre moi futur prenne le dessus sur l’impulsion du moment.
                 </p>
                 <p>
-                  Commencez dès aujourd’hui avec une seule habitude. Chaque petit succès construit la confiance nécessaire pour aborder des changements plus ambitieux. Votre futur vous remerciera, non pas pour une performance parfaite, mais pour un système simple qui tient quand vous êtes fatigué.
+                  Commencez dès aujourd’hui avec une seule dépendance. Chaque petit succès construit la confiance nécessaire pour aborder des changements plus ambitieux. Votre futur vous remerciera, non pas pour une performance parfaite, mais pour un système simple qui tient quand vous êtes fatigué.
                 </p>
                 <p>
                   Si vous deviez retenir une seule idée, ce serait celle-ci : vous n’avez pas besoin d’être “plus fort”. Vous avez besoin de décisions prises au bon moment, et d’un environnement qui les respecte. C’est exactement ce que fait un bon système.

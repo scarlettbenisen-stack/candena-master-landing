@@ -158,15 +158,19 @@ export default function App() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4 }}
               className={isDark ? 'text-4xl font-semibold tracking-tight text-white md:text-6xl' : 'text-4xl font-semibold tracking-tight text-zinc-900 md:text-6xl'}
-            >
-              Vous fixez le prix. Vous gardez le contrôle.
+>
+              Candena verrouille vos tentations
             </motion.h1>
             <div className={isDark ? 'mt-4 max-w-xl text-base italic text-white/65' : 'mt-4 max-w-xl text-base italic text-zinc-500'}>
               Pas parce que vous manquez de volonté. Parce que personne ne peut négocier avec lui-même et gagner.
             </div>
 
-            <p className={isDark ? 'mt-4 max-w-xl text-lg text-white/70' : 'mt-4 max-w-xl text-lg text-zinc-600'}>
-              Candena verrouille vos tentations. Chaque écart a un prix que vous avez choisi vous-même, dont la moitié part à une cause qui le mérite.
+            <h2 className={isDark ? 'mt-4 max-w-xl text-2xl font-semibold tracking-tight text-white md:text-3xl' : 'mt-4 max-w-xl text-2xl font-semibold tracking-tight text-zinc-900 md:text-3xl'}>
+              Vous fixez le prix. Vous gardez le contrôle.
+            </h2>
+
+            <p className={isDark ? 'mt-3 max-w-xl text-lg text-white/70' : 'mt-3 max-w-xl text-lg text-zinc-600'}>
+              Chaque écart a un prix que vous avez choisi vous-même, dont la moitié part à une cause qui le mérite.
               Une façon de vous tenir à vos propres règles, même quand l’envie est là.
             </p>
 

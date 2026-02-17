@@ -138,8 +138,8 @@ export default function App() {
               Vous fixez le prix. Vous gardez le contrôle.
             </motion.h1>
             <p className={isDark ? 'mt-4 max-w-xl text-lg text-white/70' : 'mt-4 max-w-xl text-lg text-zinc-600'}>
-              Candena verrouille vos tentations selon VOS règles. Besoin d&apos;ouvrir avant l&apos;heure ? C&apos;est possible — mais au prix que VOUS avez choisi.
-              La moitié va à la lutte contre les addictions.
+              Candena verrouille vos tentations selon vos règles. Besoin d’ouvrir avant l’heure ? C’est possible, au prix que vous avez choisi.
+              Une partie est reversée à une association de lutte contre les addictions, que vous aurez choisie.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -166,9 +166,9 @@ export default function App() {
             </div>
 
             <div className={isDark ? 'mt-8 flex flex-wrap gap-3 text-xs text-white/60' : 'mt-8 flex flex-wrap gap-3 text-xs text-zinc-500'}>
-              <span className={isDark ? 'rounded-full border border-white/10 bg-white/5 px-3 py-1' : 'rounded-full border border-black/10 bg-black/5 px-3 py-1'}>Early Bird — 99€ au lieu de 149€</span>
+              <span className={isDark ? 'rounded-full border border-white/10 bg-white/5 px-3 py-1' : 'rounded-full border border-black/10 bg-black/5 px-3 py-1'}>Early Bird : 99€ au lieu de 149€</span>
               <span className={isDark ? 'rounded-full border border-white/10 bg-white/5 px-3 py-1' : 'rounded-full border border-black/10 bg-black/5 px-3 py-1'}>Livraison Q4 2026</span>
-              <span className={isDark ? 'rounded-full border border-white/10 bg-white/5 px-3 py-1' : 'rounded-full border border-black/10 bg-black/5 px-3 py-1'}>50% reversé à Tabac Info Service</span>
+              <span className={isDark ? 'rounded-full border border-white/10 bg-white/5 px-3 py-1' : 'rounded-full border border-black/10 bg-black/5 px-3 py-1'}>Une partie reversée à une association anti-addictions</span>
             </div>
           </div>
 
@@ -327,7 +327,7 @@ export default function App() {
               },
               {
                 title: 'Déverrouillage d’urgence',
-                desc: 'Toujours accessible — mais au prix que vous avez fixé. 50% reversé à la lutte contre les addictions.',
+                desc: 'Toujours accessible, au prix que vous avez fixé. Une partie est reversée à une association anti-addictions, choisie par vous.',
                 emoji: '🚨',
               },
               {
@@ -387,8 +387,8 @@ export default function App() {
         <div className="mx-auto max-w-6xl px-4 py-16">
           <h2 className={isDark ? 'text-3xl font-semibold text-white' : 'text-3xl font-semibold text-zinc-900'}>La science derrière Candena</h2>
           <p className={isDark ? 'mt-3 max-w-3xl text-white/70' : 'mt-3 max-w-3xl text-zinc-600'}>
-            Candena est un <span className="font-semibold">pre-commitment device</span> — un outil d&apos;engagement anticipé. Vous définissez vos règles à tête reposée.
-            Quand l&apos;envie arrive, la décision est déjà prise. Pas de négociation, pas de « juste cette fois ».
+            Candena est un <span className="font-semibold">pre-commitment device</span>, un outil d’engagement anticipé. Vous définissez vos règles à tête reposée.
+            Quand l’envie arrive, la décision est déjà prise. Pas de négociation. Pas de « juste cette fois ».
           </p>
           <div className="mt-8 grid gap-4 md:grid-cols-3">
             {[
@@ -426,7 +426,7 @@ export default function App() {
             {[
               {
                 q: 'Et si j’ai une vraie urgence ?',
-                a: 'Vous pouvez toujours ouvrir la boîte via l’app. Mais ça déclenche le montant que vous avez choisi : 5€, 10€, 50€ ou 100€. 50% est reversé à Tabac Info Service. C’est votre engagement, votre prix.',
+                a: 'Vous pouvez toujours ouvrir la boîte via l’app. Cela déclenche le montant que vous avez choisi, par exemple 5€, 10€, 50€ ou 100€. Une partie est reversée à une association de lutte contre les addictions, choisie par vous. C’est votre engagement, votre prix.',
               },
               {
                 q: 'Pourquoi faut-il attendre fin 2026 ?',
@@ -438,7 +438,7 @@ export default function App() {
               },
               {
                 q: 'Où va l’argent des pénalités ?',
-                a: 'Quand vous déverrouillez avant l’heure, le montant que VOUS avez fixé est débité. 50% va à Tabac Info Service, 50% couvre les frais de transaction. Votre rechute finance la lutte contre les addictions.',
+                a: 'Quand vous déverrouillez avant l’heure, le montant que vous avez fixé est débité. Une partie est reversée à une association de lutte contre les addictions, choisie par vous. Le reste couvre les frais de transaction et d’opération. Votre ouverture anticipée soutient une cause utile, plutôt que la culpabilité.',
               },
             ].map((it) => (
               <div key={it.q} className={isDark ? 'rounded-3xl border border-white/10 bg-white/5 p-6' : 'rounded-3xl border border-black/10 bg-black/5 p-6'}>

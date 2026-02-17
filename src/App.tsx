@@ -216,7 +216,7 @@ export default function App() {
               <span className="font-semibold"> « Le Protocole Candena »</span> — notre guide pour reprendre le contrôle, étape par étape.
             </p>
 
-            <div className={isDark ? 'mt-6 rounded-2xl border border-white/10 bg-white/5 p-5' : 'mt-6 rounded-2xl border border-black/10 bg-black/5 p-5'}>
+            <div className={isDark ? 'mt-6 rounded-xl border border-white/[0.10] bg-white/[0.06] p-5' : 'mt-6 rounded-xl border border-black/10 bg-black/[0.04] p-5'}>
               <div className={isDark ? 'text-sm text-white/60' : 'text-sm text-zinc-500'}>1 200+ personnes ont déjà reçu le guide.</div>
               <div className="mt-4 flex flex-col gap-3 sm:flex-row">
                 <input
@@ -308,7 +308,7 @@ export default function App() {
                 </label>
               </div>
 
-              <div className={isDark ? 'rounded-2xl bg-white/5 p-4' : 'rounded-2xl bg-white p-4'}>
+              <div className={isDark ? 'rounded-lg border border-white/[0.10] bg-white/[0.08] p-4' : 'rounded-lg border border-black/10 bg-black/[0.04] p-4'}>
                 <div className={isDark ? 'text-sm text-white/60' : 'text-sm text-zinc-500'}>
                   {habitLabels[habit]} • {hoursPerDay}h par jour
                 </div>
@@ -673,7 +673,7 @@ export default function App() {
           </div>
           <div className={isDark ? 'mt-10 text-xs text-white/50' : 'mt-10 text-xs text-zinc-500'}>
             © {new Date().getFullYear()} Candena. Tous droits réservés.
-            <span className="ml-2">Un projet conçu en France 🇫🇷</span>
+            <span className="ml-2">Un projet conçu en France</span>
           </div>
         </div>
       </footer>
@@ -685,8 +685,8 @@ export default function App() {
             href="#pricing"
             className={
               isDark
-                ? 'inline-flex w-full items-center justify-center rounded-2xl bg-white px-6 py-3 text-sm font-semibold text-black shadow-glow'
-                : 'inline-flex w-full items-center justify-center rounded-2xl bg-black px-6 py-3 text-sm font-semibold text-white'
+                ? 'inline-flex w-full items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black shadow-glow'
+                : 'inline-flex w-full items-center justify-center rounded-xl bg-black px-6 py-3 text-sm font-semibold text-white'
             }
           >
             Réserver — 99€

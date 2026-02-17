@@ -699,16 +699,38 @@ export default function App() {
                 <div className={isDark ? 'mt-2 h-3 w-full rounded-full bg-white/10' : 'mt-2 h-3 w-full rounded-full bg-black/10'}>
                   <div className="h-3 w-[20%] rounded-full bg-[#ffb347]" />
                 </div>
-                <a
-                  href="#"
-                  className={
-                    isDark
-                      ? 'mt-5 inline-flex w-full items-center justify-center rounded-xl bg-[#ffb347] px-6 py-4 text-sm font-semibold text-black transition-colors hover:bg-[#ffc06a]'
-                      : 'mt-5 inline-flex w-full items-center justify-center rounded-xl bg-[#ffb347] px-6 py-4 text-sm font-semibold text-black transition-colors hover:bg-[#ffc06a]'
-                  }
+                <form
+                  className="mt-5 grid gap-3"
+                  onSubmit={(e) => {
+                    e.preventDefault()
+                    const fd = new FormData(e.currentTarget)
+                    const email = String(fd.get('email') || '').trim()
+                    if (!/.+@.+\..+/.test(email)) return
+                    localStorage.setItem('candena_guide_access', JSON.stringify({ email, at: Date.now() }))
+                    window.location.href = `${import.meta.env.BASE_URL}confirmation.html`
+                  }}
                 >
-                  Je réserve mon exemplaire, 99€
-                </a>
+                  <input
+                    name="email"
+                    placeholder="votre@email.com"
+                    inputMode="email"
+                    className={
+                      isDark
+                        ? 'h-11 w-full rounded-lg border border-white/10 bg-black/40 px-4 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#ffb347]/40'
+                        : 'h-11 w-full rounded-lg border border-black/10 bg-white px-4 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#ffb347]/40'
+                    }
+                  />
+                  <button
+                    type="submit"
+                    className={
+                      isDark
+                        ? 'inline-flex w-full items-center justify-center rounded-xl bg-[#ffb347] px-6 py-4 text-sm font-semibold text-black transition-colors hover:bg-[#ffc06a]'
+                        : 'inline-flex w-full items-center justify-center rounded-xl bg-[#ffb347] px-6 py-4 text-sm font-semibold text-black transition-colors hover:bg-[#ffc06a]'
+                    }
+                  >
+                    Réserver mon exemplaire
+                  </button>
+                </form>
                 <div className={isDark ? 'mt-3 text-xs text-white/50' : 'mt-3 text-xs text-zinc-500'}>
                   C&apos;est une précommande, un vrai pari sur vous-même.
                   <span className="ml-1 opacity-90">Un pari sur vous-même, à 99€.</span>

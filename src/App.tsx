@@ -171,6 +171,7 @@ export default function App() {
 
             <p className={isDark ? 'mt-3 max-w-xl text-lg text-white/70' : 'mt-3 max-w-xl text-lg text-zinc-600'}>
               Chaque écart a un prix que vous avez choisi vous-même, dont la moitié part à une cause qui le mérite.
+              Vous pouvez aussi choisir un mode strict : aucun déverrouillage anticipé.
               Une façon de vous tenir à vos propres règles, même quand l’envie est là.
             </p>
 
@@ -630,7 +631,7 @@ export default function App() {
             const faqs = [
               {
                 q: 'Et si j’ai une vraie urgence ?',
-                a: 'Vous pouvez toujours ouvrir la boîte via l’app. Cela déclenche le montant que vous avez choisi, par exemple 5€, 10€, 50€ ou 100€. Une partie est reversée à une association de lutte contre les addictions, choisie par vous. C’est votre engagement, votre prix.',
+                a: 'Deux options. Mode strict : aucun déverrouillage anticipé. Ou mode engagement : vous pouvez ouvrir via l’app, et cela déclenche le montant que vous avez choisi (par exemple 5€, 10€, 50€ ou 100€). Une partie est reversée à une association de lutte contre les addictions, choisie par vous.',
               },
               {
                 q: 'Pourquoi faut-il attendre fin 2026 ?',

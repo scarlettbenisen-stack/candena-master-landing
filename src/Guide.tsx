@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import { hasGuideAccess } from './gate'
+import { GuideGate } from './components/GuideGate'
 import { motion } from 'framer-motion'
 import './index.css'
 import { applyTheme, getInitialTheme, type Theme } from './theme'
@@ -22,6 +24,11 @@ export default function Guide() {
   }, [theme])
 
   const isDark = theme === 'dark'
+  const [allowed, setAllowed] = useState(false)
+
+  useEffect(() => {
+    setAllowed(hasGuideAccess())
+  }, [])
 
   return (
     <div className={isDark ? 'min-h-screen bg-bg-950 bg-grain text-white' : 'min-h-screen bg-white text-zinc-900'}>
@@ -163,7 +170,25 @@ export default function Guide() {
       {/* Content */}
       <section id="contenu" className={isDark ? 'border-t border-white/10' : 'border-t border-black/10'}>
         <div className="mx-auto max-w-3xl px-4 py-14 md:py-20">
+          {!allowed ? (
+            <div className="grid gap-4">
+              <div className={isDark ? 'text-sm text-white/70' : 'text-sm text-zinc-600'}>
+                Pour accéder au guide complet, merci de saisir votre email.
+              </div>
+              <GuideGate
+                isDark={isDark}
+                onSuccess={() => {
+                  setAllowed(true)
+                  // Jump to content
+                  setTimeout(() => {
+                    document.getElementById('contenu')?.scrollIntoView({ behavior: 'smooth' })
+                  }, 50)
+                }}
+              />
+            </div>
+          ) : (
           <article className={isDark ? 'text-white/85' : 'text-zinc-800'}>
+
             <h2 className={isDark ? 'text-2xl font-semibold text-white' : 'text-2xl font-semibold text-zinc-900'}>
               Candena : l’ultime outil pour en finir avec vos mauvaises habitudes
             </h2>
@@ -411,6 +436,7 @@ export default function Guide() {
               </div>
             </div>
           </article>
+          )}
         </div>
       </section>
 

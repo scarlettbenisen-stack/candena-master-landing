@@ -263,25 +263,39 @@ export default function App() {
 
             <div className={isDark ? 'mt-6 rounded-xl border border-white/[0.10] bg-white/[0.06] p-5' : 'mt-6 rounded-xl border border-black/10 bg-black/[0.04] p-5'}>
               <div className={isDark ? 'text-sm text-white/60' : 'text-sm text-zinc-500'}>1 200+ personnes ont déjà reçu le guide.</div>
-              <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+              <form
+                className="mt-4 flex flex-col gap-3 sm:flex-row"
+                onSubmit={(e) => {
+                  e.preventDefault()
+                  const fd = new FormData(e.currentTarget)
+                  const email = String(fd.get('email') || '').trim()
+                  if (!/.+@.+\..+/.test(email)) return
+                  // Soft gate: store locally, then open the guide
+                  localStorage.setItem('candena_guide_access', JSON.stringify({ email, at: Date.now() }))
+                  window.location.href = `${import.meta.env.BASE_URL}guide.html`
+                }}
+              >
                 <input
+                  name="email"
                   placeholder="votre@email.com"
+                  inputMode="email"
                   className={
                     isDark
-                      ? 'h-11 w-full rounded-xl border border-white/10 bg-black/40 px-4 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#ffb347]/40'
-                      : 'h-11 w-full rounded-xl border border-black/10 bg-white px-4 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#ffb347]/40'
+                      ? 'h-11 w-full rounded-lg border border-white/10 bg-black/40 px-4 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-[#ffb347]/40'
+                      : 'h-11 w-full rounded-lg border border-black/10 bg-white px-4 text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-[#ffb347]/40'
                   }
                 />
                 <button
+                  type="submit"
                   className={
                     isDark
-                      ? 'h-11 rounded-xl bg-white px-5 text-sm font-semibold text-black hover:opacity-95'
-                      : 'h-11 rounded-xl bg-black px-5 text-sm font-semibold text-white hover:opacity-95'
+                      ? 'h-11 rounded-lg bg-[#ffb347] px-5 text-sm font-semibold text-black transition-colors hover:bg-[#ffc06a]'
+                      : 'h-11 rounded-lg bg-[#ffb347] px-5 text-sm font-semibold text-black transition-colors hover:bg-[#ffc06a]'
                   }
                 >
                   Recevoir le guide
                 </button>
-              </div>
+              </form>
               <div className={isDark ? 'mt-3 text-xs text-white/50' : 'mt-3 text-xs text-zinc-500'}>
                 Coulisses du projet + techniques de discipline. Zéro spam, désinscription en 1 clic.
               </div>
